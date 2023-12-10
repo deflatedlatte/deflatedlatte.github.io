@@ -25,6 +25,56 @@ main.vertically-centered {
   text-align: center;
 }
 
+.main-center-site-explorer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-block-start: 32px;
+  margin-block-end: 32px;
+}
+
+#site-explorer-searchbox {
+  width: 320px;
+  height: 32px;
+  margin: auto;
+  padding-inline-start: 6px;
+  padding-inline-end: 6px;
+  border-radius: 12px;
+  border: 2px solid lightgray;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#site-explorer-searchbox:focus {
+  border-color: #77C3EC;
+}
+
+#site-explorer-search-result {
+  width: 320px;
+  margin: auto;
+}
+
+.search-result-entry:hover {
+  background-color: lightblue;
+}
+
+.search-result-entry {
+  border: 1px solid lightgray;
+  padding: 12px;
+}
+
+.search-result-title {
+  margin: 0 0 12px 0;
+  font-weight: bold;
+}
+
+.search-result-url {
+  color: gray;
+  font-size: 0.8em;
+  margin: 0;
+}
+
 .main-article {
   margin: auto;
   max-width: 800px;
