@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jinja 템플릿 - 🫠deflatedlatte☕</title>
+  </head>
+  <body>
+    <main>
+      <article class="main-article">
+        <h1>Jinja 템플릿</h1>
+        <p>
+          Jinja 템플릿은 텍스트에 placeholder를 삽입해 자동으로 내용을 채울 수 있게 해준다.
+          파이썬으로 작성되었으며, 템플릿 내에서도 파이썬 표현식을 사용할 수 있다.
+        </p>
+        <p>
+          Jinja의 디자인 철학은 <em>되도록이면 어플 로직은 파이썬 내에 있어야 하지만,
+          그렇다고 <strong>템플릿 기능을 너무 빼서 템플릿 디자이너를 힘들게 하면 안된다</strong></em>이다.
+          실제로 사용해보면 Liquid 같은 템플릿 엔진에 비해 템플릿 언어로 할 수 있는 것이 많아
+          문서를 작성할 때 한결 수월한 것을 알 수 있다.
+        </p>
+        <section>
+          <h2>공식 웹사이트</h2>
+          <p>
+            <a href="https://jinja.palletsprojects.com/">https://jinja.palletsprojects.com/</a>
+          </p>
+        </section>
+        <section>
+          <h2>설치 방법</h2>
+          <p>
+            <code>pip install Jinja2</code>로 설치하면 된다.
+          </p>
+        </section>
+        <section>
+          <h2>사용 방법</h2>
+          <p>
+            Jinja 템플릿을 사용하는 과정은 크게 다음과 같다.
+          </p>
+          <ol>
+            <li>Jinja 템플릿 문서를 작성한다.</li>
+            <li>파이썬 코드에서 <code>Environment</code>를 생성한다.</li>
+            <li><code>Environment</code> 위에서 템플릿 문서를 처리해 실제 문서를 찍어낸다.</li>
+          </ol>
+          <p>
+            보통의 경우 템플릿을 읽어서 찍어내는 부분은 Flask나 Ansible 같은 라이브러리에서
+            알아서 해주기 때문에, 템플릿 문서만 작성하고 각 라이브러리에서 요구하는 경로에
+            문서를 집어넣는 방식으로 사용하게 된다.
+          </p>
+          <p>
+            다른 라이브러리의 도움 없이 템플릿을 렌더링해야 하는 경우는 아래의
+            <strong>템플릿으로 실제 문서 찍어내기</strong> 절을 참고.
+          </p>
+
+          <h3>템플릿 문서 작성하기</h3>
+          <p>
+            <a href="https://jinja.palletsprojects.com/templates/">공식 문서</a>를 참고.
+          </p>
+
+          <h3>템플릿으로 실제 문서 찍어내기</h3>
+          <p>
+            Jinja 라이브러리는 템플릿을 렌더링해주는 API를 제공한다.
+            <a href="https://jinja.palletsprojects.com/api/">공식 문서</a>를 참고.
+          </p>
+          <p>
+            템플릿을 렌더링하는 방법은 대표적으로 3가지 정도가 있다.
+          </p>
+          <ul>
+            <li><code>Template</code>에 문자열로 Jinja 문서를 입력</li>
+            <li><code>Environment</code>를 생성 후 <code>.from_string()</code> 메소드에 Jinja 문서를 입력</li>
+            <li>
+              <code>Environment</code>에 <code>Loader</code>를 설정하고, <code>.get_template()</code>
+              메소드나 <code>.select_template()</code> 메소드로 템플릿을 가져온다.
+            </li>
+          </ul>
+          <p>
+            공식 문서는 3번째 방법을 권장하고 있다.  셋 중 어떤 방법을 쓰든 <code>Template</code>
+            오브젝트가 반환되는데, <code>.render()</code> 메소드로 텍스트본을 반환 받을 수 있다.
+            템플릿 변수는 <code>.render()</code>의 인자로 넘겨주면 된다. keyword argument로 지정할
+            수도 있고, 아니면 그냥 dict 하나를 통으로 던져줘도 된다.
+          </p>
+          <p>
+            문서가 긴 경우에는 <code>.generate()</code>나 <code>.stream()</code>을 사용하여 점진적으로
+            렌더링하는 게 나을 수 있다. 사용 방법은 공식 문서를 참고.
+          </p>
+          <p>
+            <code>Environment</code>를 생성할 때는 <code>autoescape</code> 인자를 설정해주는 게 좋다.
+            <code>jinja2.select_autoescape()</code> 함수를 호출하면 HTML/XML용 설정을 자동 생성해준다.
+          </p>
+          <p>
+            위 내용을 기반으로 한 예제 코드는 다음과 같다.
+          </p>
+          <pre><code class="language-python"><!--
+         -->from jinja2 import Environment, select_autoescape
+<!--     -->
+<!--     -->env = Environment(autoescape=select_autoescape())
+<!--     -->tmpl = env.from_string("{{ x }} + {{ y }} is {{ x + y }}")
+<!--     -->
+<!--     -->print(tmpl.render(x=1, y=2))
+<!--     -->print(tmpl.render({"x": 4, "y": 3}))<!--
+       --></code></pre>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p class="footer-copyright"><a href="https://github.com/deflatedlatte">© 2023 deflatedlatte</a></p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </body>
+</html>
