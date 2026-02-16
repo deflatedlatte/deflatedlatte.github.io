@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>deflatedlatte's blog</title>
+    <link href="/styles/styles.css" rel="stylesheet">
+    <script src="/scripts/main.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a class="logo" href="/"><span class="logo-icon">🫠</span><span class="logo-text">deflatedlatte</span></a>
+        <div class="nav-links">
+          <a class="nav-link active" href="/">홈</a><a class="nav-link" href="/posts">포스트</a>
+        </div>
+        <div class="nav-actions">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"><svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg><svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button><button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            deflatedlatte의 블로그
+          </h1>
+          <p class="hero-subtitle">
+            제 생각과 이야기를 구경하고 가세요
+          </p>
+        </div>
+      </section>
+      <section class="featured-section">
+        <div class="container">
+          <h2 class="section-title">
+            특집
+          </h2>
+          <article class="featured-post">
+            <div class="featured-content">
+              <div class="post-meta">
+                <span class="category">이야기</span><span class="date">2026-02-01 14:22:00</span>
+              </div>
+              <h3 class="featured-title">
+                <a href="/posts/2026-02-17-dns-serverhold.html">ServerHold: DNS의 또 다른 함정</a>
+              </h3>
+              <p class="featured-excerpt">
+                돈을 내고 도메인 네임을 구매해도, 레지스트리 오퍼레이터 마음대로 DNS에서 없애버릴 수 있습니다.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="posts-section">
+        <div class="container">
+          <h2 class="section-title">
+            최근 글
+          </h2>
+          <div id="postsGrid" class="posts-grid">
+            <article class="post-card" data-category="이야기">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="category">이야기</span><span class="date">2026-02-01 14:22:00</span>
+                </div>
+                <h3 class="post-card-title">
+                  <a href="/posts/2026-02-17-dns-serverhold.html">ServerHold: DNS의 또 다른 함정</a>
+                </h3>
+                <p class="post-card-excerpt">
+                  돈을 내고 도메인 네임을 구매해도, 레지스트리 오퍼레이터 마음대로 DNS에서 없애버릴 수 있습니다.
+                </p>
+              </div>
+            </article>
+          </div><a href="/posts/"><button id="loadMore" class="load-more">글 더보기</button></a>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="logo" href="/"><span class="logo-icon">🫠</span><span class="logo-text">deflatedlatte</span></a>
+            <p>
+              안녕하세요
+            </p>
+            <div class="social-links">
+              <a aria-label="X" href="https://x.com/deflatedlatte"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 1200 1200" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="currentColor"></path></svg></a><a aria-label="GitHub" href="https://github.com/deflatedlatte"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/deflatedlatte"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>
+              법적 고지 (Legal Notices)
+            </h4>
+            <ul>
+              <li>
+                <a href="/privacy-policy.html">개인정보 처리방침 (Privacy Policy)</a>
+              </li>
+              <li>
+                <a href="/terms-of-service.html">이용 약관 (Terms of Service)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © 2026 deflatedlatte. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

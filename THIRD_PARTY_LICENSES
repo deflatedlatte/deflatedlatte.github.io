@@ -1,0 +1,42 @@
+# Third-Party Licenses
+
+This project incorporates the following third-party assets. Each is used
+according to its original license terms.
+
+## Fonts
+1. Inter
+   - Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
+   - License: SIL Open Font License 1.1
+   - See `/fonts/inter_OFL.txt` for full license text.
+
+2. IBM Plex Sans KR
+   - Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
+   - License: SIL Open Font License 1.1
+   - See `/fonts/ibm-plex-sans-kr_OFL.txt` for full license text.
+
+3. Noto Sans KR
+   - Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font
+     Name 'Source'
+   - License: SIL Open Font License 1.1
+   - See `/fonts/noto-sans-kr_OFL.txt` for full license text.
+
+4. Nanum Gothic Coding
+   - Copyright (c) 2010, NHN Corporation (http://www.nhncorp.com),
+     with Reserved Font Name Nanum, Naver Nanum, NanumGothic, Naver 
+     NanumGothic, NanumMyeongjo, Naver NanumMyeongjo, NanumBrush, Naver
+     NanumBrush, NanumPen, Naver NanumPen.
+   - License: SIL Open Font License 1.1
+   - See `/fonts/nanum-gothic-coding_OFL.txt` for full license text.
+
+5. Noto Serif KR
+   - Copyright 2012 Google Inc. All Rights Reserved.
+   - License: SIL Open Font License 1.1
+   - See `/fonts/noto-serif-kr_OFL.txt` for full license text.
+
+6. Nanum Myeongjo
+   - Copyright (c) 2010, NHN Corporation (http://www.nhncorp.com), with
+     Reserved Font Name Nanum, Naver Nanum, NanumGothic, Naver NanumGothic,
+     NanumMyeongjo, Naver NanumMyeongjo, NanumBrush, Naver NanumBrush,
+     NanumPen, Naver NanumPen
+   - License: SIL Open Font License 1.1
+   - See `/fonts/nanum-myeongjo_OFL.txt` for full license text.
