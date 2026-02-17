@@ -17,7 +17,7 @@ function toggleTheme() {
     localStorage.setItem('theme', newTheme);
 }
 
-function toggleMobileMenu() {
+function toggleMobileMenu(mobileMenuToggle, navLinks) {
     mobileMenuToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
 }
@@ -70,7 +70,10 @@ function init() {
     }
 
     if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        mobileMenuToggle.addEventListener(
+            'click',
+            (e) => {toggleMobileMenu(mobileMenuToggle, navLinks);}
+        );
     }
 
     setupSmoothScroll();
@@ -79,14 +82,14 @@ function init() {
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
-            toggleMobileMenu();
+            toggleMobileMenu(mobileMenuToggle, navLinks);
         }
     });
 
     // Handle escape key for mobile menu
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-            toggleMobileMenu();
+            toggleMobileMenu(mobileMenuToggle, navLinks);
         }
     });
 }

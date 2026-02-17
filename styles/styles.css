@@ -802,6 +802,11 @@ ul, ol {
     font-family: var(--font-sans-content);
     font-size: 1.125rem;
     line-height: 1.8;
+    overflow-x: auto;
+}
+
+.content-body a {
+    text-decoration-line: underline;
 }
 
 .content-body p {
